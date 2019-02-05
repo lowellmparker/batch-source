@@ -56,5 +56,25 @@ public class Fish extends AuquaticAnimals {
 		System.out.println("This fish "+name+" has "+gils+" gils and this many fins "+fins+" and can swim "+this.getSwims());
 		
 	}
+	
+	@Override
+	
+	public boolean equals(Object o) {
+		if(o.getClass()!=this.getClass()) {
+			return false;
+		}
+		
+		Fish ff = (Fish) o;
+		if(ff.getSwims()!=this.getSwims()) {
+			return false;
+		}if(ff.name!=this.name) {
+			return false;
+		}if(ff.fins!=this.fins) {
+			return false;
+		}if(ff.gils!=this.gils) {
+			return false;
+		}
+		return true;
+	}
 
 }

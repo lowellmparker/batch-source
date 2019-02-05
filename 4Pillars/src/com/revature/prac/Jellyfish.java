@@ -6,6 +6,7 @@ public class Jellyfish extends AuquaticAnimals {
 
 	private int danglies;
 
+
 /*This is an example of my method overloading through the pillar of Polymorphism due to the change of data types 
  in the parameter of the method squishyFactor*/
 	public void squishyFactor(int squishyNess) {
@@ -15,6 +16,12 @@ public class Jellyfish extends AuquaticAnimals {
     public void squishyFactor(char squishyNess) {
     	System.out.println("That jelly has aa squish factor of YES");
 	}
+    
+//    method hidding
+    public static void swim() {
+    	System.out.println("jelly swimming");
+    }
+    
 	
 	public Jellyfish() {
 		super();
@@ -46,6 +53,23 @@ public class Jellyfish extends AuquaticAnimals {
 	public boolean edible() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Override
+	
+	public boolean equals(Object o) {
+		if(o.getClass()!=this.getClass()) {
+			return false;
+		}
+		
+		Jellyfish jj = (Jellyfish) o;
+		if(jj.getSwims()!=this.getSwims()) {
+			return false;
+		}
+		if(jj.danglies!=this.danglies) {
+			return false;
+		}
+		return true;
 	}
 
 	

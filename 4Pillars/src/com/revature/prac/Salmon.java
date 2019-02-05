@@ -23,5 +23,24 @@ public class Salmon extends Fish {
 		
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if(o.getClass()!=this.getClass()) {
+			return false;
+		}
+		
+		Salmon ss = (Salmon) o;
+		if(ss.getSwims()!=this.getSwims()) {
+			return false;
+		}if(ss.name!=this.name) {
+			return false;
+		}if(ss.getFins()!=this.getFins()) {
+			return false;
+		}if(ss.getGils()!=this.getGils()) {
+			return false;
+		}
+		return true;
+	}
+	
 }
 

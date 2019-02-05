@@ -13,6 +13,9 @@ public abstract class AuquaticAnimals implements Ediable {
 	public abstract void draw();{
 		System.out.println("This Animal is wet");
 	}
+	public static void swim() {
+    	System.out.println("aquatic swimming");
+    }
 	
 	//Example of encapsulation through the creation of a getter method to retrieve my variable
 
@@ -25,6 +28,19 @@ public abstract class AuquaticAnimals implements Ediable {
 	public void setSwims(boolean swims) {
 		this.swims = swims;
 	}
+	
+	public boolean equals(Object o) {
+		if(o.getClass()!=this.getClass()) {
+			return false;
+		}
+		
+		AuquaticAnimals aa = (AuquaticAnimals) o;
+		if(aa.swims!=this.swims) {
+			return false;
+		}
+		return true;
+	}
+	
 	
 	
 }
